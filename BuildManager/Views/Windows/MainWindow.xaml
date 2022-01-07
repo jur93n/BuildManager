@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BuildManager"
         mc:Ignorable="d"
-        Title="BuildManager" Height="450" Width="800">
+        Title="BuildManager" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        
+        <DataGrid x:Name="dgBuildManager" FontSize="16" FontWeight="Bold" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="False" Header="Вид роботи" Width="*"/>
+                <DataGridTextColumn IsReadOnly="False" Header="Виконавець" Width="180"/>
+                <DataGridTextColumn IsReadOnly="False" Header="Тривалість" Width="160"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Загальна вартість" Width="160"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
