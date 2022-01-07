@@ -11,9 +11,9 @@
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="False" Header="Вид роботи" Width="*"/>
                 <DataGridTextColumn IsReadOnly="False" Header="Виконавець" Width="180"/>
-                <DataGridTextColumn IsReadOnly="False" Header="Тривалість" Width="160"/>
-                <DataGridTextColumn IsReadOnly="True" Header="Загальна вартість" Width="160"/>
-
+                <DataGridTextColumn IsReadOnly="False" Header="Тривалість" Width="120"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Дата" Width="100"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Загальна вартість" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
