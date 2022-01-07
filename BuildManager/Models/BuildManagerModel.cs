@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace BuildManager.Models
 {
-    class BuildManagerModel
+    public class BuildManagerModel : INotifyPropertyChanged
     {
         static DateTime CreationDate { get; set; } = DateTime.Now;
 
@@ -18,27 +16,48 @@ namespace BuildManager.Models
         public string TypeOfWork
         {
             get { return _typeOfWork; }
-            set { _typeOfWork = value; }
+            set 
+            { 
+                _typeOfWork = value;
+                OnPropertyChanged("TypeOfWork");
+            }
         }
         
         public string Worker
         {
             get { return _worker; }
-            set { _worker = value; }
+            set 
+            { 
+                _worker = value;
+                OnPropertyChanged("Worker");
+            }
         }
 
         public string Duration
         {
             get { return _duration; }
-            set { _duration = value; }
+            set 
+            { 
+                _duration = value;
+                OnPropertyChanged("Duration");
+            }
         }
 
         public int TotalPrice
         {
             get { return _totalPrice; }
-            set { _totalPrice = value; }
+            set 
+            { 
+                _totalPrice = value;
+                OnPropertyChanged("TotalPrice");
+            }
         }
 
-
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
     }
 }
