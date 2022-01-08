@@ -6,7 +6,7 @@ namespace BuildManager.Models
 {
     public class BuildManagerModel : INotifyPropertyChanged
     {
-        static DateTime CreationDate { get; set; } = DateTime.Now;
+        public DateTime CreationDate { get; set; } = DateTime.Now;
 
         private string _typeOfWork;
         private string _worker;
@@ -17,7 +17,9 @@ namespace BuildManager.Models
         {
             get { return _typeOfWork; }
             set 
-            { 
+            {
+                if (_typeOfWork == value)
+                    return;
                 _typeOfWork = value;
                 OnPropertyChanged("TypeOfWork");
             }
@@ -27,7 +29,9 @@ namespace BuildManager.Models
         {
             get { return _worker; }
             set 
-            { 
+            {
+                if (_worker == value)
+                    return;
                 _worker = value;
                 OnPropertyChanged("Worker");
             }
@@ -37,7 +41,9 @@ namespace BuildManager.Models
         {
             get { return _duration; }
             set 
-            { 
+            {
+                if (_duration == value)
+                    return;
                 _duration = value;
                 OnPropertyChanged("Duration");
             }
@@ -47,7 +53,9 @@ namespace BuildManager.Models
         {
             get { return _totalPrice; }
             set 
-            { 
+            {
+                if (_totalPrice == value)
+                    return;
                 _totalPrice = value;
                 OnPropertyChanged("TotalPrice");
             }
@@ -59,5 +67,7 @@ namespace BuildManager.Models
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
+
+        
     }
 }

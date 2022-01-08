@@ -13,3 +13,6 @@ C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager.exe
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager.pdb
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\Windows\MainWindow.g.cs
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\Windows\MainWindow.baml
+C:\Users\User\source\repos\BuildManager\BuildManager\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\source\repos\BuildManager\BuildManager\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager.csproj.CopyComplete

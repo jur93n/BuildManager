@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BuildManager"
         mc:Ignorable="d"
-        Title="BuildManager" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="BuildManager" Height="600" Width="1000" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="dgBuildManager" FontSize="16" FontWeight="Bold" Margin="10">
+        <DataGrid x:Name="dgBuildManager" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn IsReadOnly="False" Header="Вид роботи" Width="*"/>
-                <DataGridTextColumn IsReadOnly="False" Header="Виконавець" Width="180"/>
-                <DataGridTextColumn IsReadOnly="False" Header="Тривалість" Width="120"/>
-                <DataGridTextColumn IsReadOnly="True" Header="Дата" Width="100"/>
-                <DataGridTextColumn IsReadOnly="True" Header="Загальна вартість" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Path=TypeOfWork}" IsReadOnly="False" Header="Вид роботи" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path=Worker}" IsReadOnly="False" Header="Виконавець" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Path=CreationDate}" IsReadOnly="True" Header="Дата створення" Width="160"/>
+                <DataGridTextColumn Binding="{Binding Path=Duration}" IsReadOnly="False" Header="Тривалість" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Path=TotalPrice}" IsReadOnly="True" Header="Загальна вартість" Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
