@@ -180,6 +180,7 @@
     </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
     <Compile Include="Models\DataControl.cs" />
+    <Compile Include="Models\RelayCommand.cs" />
     <Compile Include="Views\MessageView.xaml.cs">
       <DependentUpon>MessageView.xaml</DependentUpon>
     </Compile>
@@ -199,7 +200,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Data\FileIOService.cs" />
     <Compile Include="Models\BuildManagerModel.cs" />
     <Compile Include="ViewModels\BuildManagerViewModel.cs" />
     <Compile Include="Views\AddNewWorkWindow.xaml.cs">

@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BuildManager.Views"
-        xmlns:viewmodels="clr-namespace:BuildManager.ViewModels"
+        xmlns:viewmodels="clr-namespace:BuildManager.ViewModels" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:BuildManagerViewModel}"
         mc:Ignorable="d"
         Title="Build Manager" Height="600" Width="1200">
     <Grid>
@@ -13,8 +14,8 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <ListBox Grid.Row="0">
-            
-            <ListView >
+
+            <ListView ItemsSource="{Binding AllBuildManagerModels}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Вид роботи"/>
@@ -27,6 +28,10 @@
             </ListView>
             
         </ListBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal"
+                    HorizontalAlignment="Left">
+            <Button Content="Створити новий вид робіт" Command="{Binding}"/>
+        </StackPanel>
         <!--<DataGrid x:Name="objectsGrid" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=TypeOfWork}" IsReadOnly="False" Header="Вид роботи" Width="*"/>

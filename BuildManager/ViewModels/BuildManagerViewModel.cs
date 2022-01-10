@@ -2,32 +2,63 @@
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
 using BuildManager.Models;
+using BuildManager.Views;
+using BuildManager.Data;
+using System.Collections.Generic;
+using System.Windows;
+using System;
 
 namespace BuildManager.ViewModels
 {
     public class BuildManagerViewModel : INotifyPropertyChanged
     {
-        private BuildManagerModel _selectedItem;
+        private List<BuildManagerModel> allBuildManagerModels = DataControl.GetAllBuildManagerModels();
 
-        public ObservableCollection<BuildManagerModel> ManagerModels { get; set; }
-        public BuildManagerModel SelectedItem
+        public List<BuildManagerModel> AllBuildManagerModels
         {
-            get { return _selectedItem; }
+            get { return allBuildManagerModels; }
             set
             {
-                _selectedItem = value;
-                OnPropertyChanged("SelectedItem");
+                allBuildManagerModels = value;
+                OnPropertyChanged("AllBuildManagerModels");
             }
         }
 
-        public BuildManagerViewModel()
+        #region Команди відкриття вікон
+        private RelayCommand openAddNewWorkWindow;
+        public RelayCommand OpenAddNewWorkWindow
         {
-            ManagerModels = new ObservableCollection<BuildManagerModel>
+            get
             {
-                new BuildManagerModel { TypeOfWork="Зламати стіну", Worker="Міхалич", Duration="Два дні", TotalPrice=200},
-                new BuildManagerModel { TypeOfWork="oboi", Worker="Glyna", Duration="two days", TotalPrice=200}
-            };            
+                return openAddNewWorkWindow ?? new RelayCommand(obj =>
+                {
+                    OpenAddNewWorkWindow();
+                }
+                );
+            }
         }
+        #endregion
+
+        #region Методи відкриття вікон
+        private void OpenAddNewWorkWindowMethod()
+        {
+            AddNewWorkWindow newWorkWindow = new AddNewWorkWindow();
+            SetCenterPositionAndOpen(newWorkWindow);
+        }
+
+        private void OpenEditNewWorkWindowMethod()
+        {
+            AddNewWorkWindow editWorkWindow = new AddNewWorkWindow();
+            SetCenterPositionAndOpen(editWorkWindow);
+        }
+
+        private void SetCenterPositionAndOpen (Window window)
+        {
+            window.Owner = Application.Current.MainWindow;
+            window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            window.ShowDialog();
+        }
+        #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

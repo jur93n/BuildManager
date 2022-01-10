@@ -1,9 +1,19 @@
 ﻿using BuildManager.Data;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BuildManager.Models
 {
     public static class DataControl
     {
+        public static List<BuildManagerModel> GetAllBuildManagerModels()
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var result = db.Works.ToList();
+                return result;
+            }
+        }
         //Cтворити клас робіт
         public static string CreateWork(string typeOfWork, string worker, string duration, int totalPrice)
         {
@@ -17,7 +27,7 @@ namespace BuildManager.Models
                     Duration = duration,
                     TotalPrice = totalPrice
                 };
-                db.Add(newModel);
+                db.Works.Add(newModel);
                 db.SaveChanges();
                 result = "Клас робіт створено";
             }
@@ -30,22 +40,23 @@ namespace BuildManager.Models
             string result;
             using (ApplicationContext db = new ApplicationContext())
             {
-                db.Remove(workModel);
+                db.Works.Remove(workModel);
                 db.SaveChanges();
                 result = "Вид робіт " + workModel.TypeOfWork + " видалено";
             }
             return result;
         }
         //Редагувати клас робіт
-        public static string EditWork (BuildManagerModel workModel, string newTypeOfWork, string newWorker, string newDuration, int newTotalPrice)
+        public static string EditWork (BuildManagerModel oldWorkModel, string newTypeOfWork, string newWorker, string newDuration, int newTotalPrice)
         {
-            string result;
+            string result = "Такого виду робіт не існує";
             using (ApplicationContext db = new ApplicationContext())
             {
-                workModel.TypeOfWork = newTypeOfWork;
-                workModel.Worker = newWorker;
-                workModel.Duration = newDuration;
-                workModel.TotalPrice = newTotalPrice;
+                BuildManagerModel buildManagerModel = db.Works.FirstOrDefault(p => p.Id == oldWorkModel.Id);
+                buildManagerModel.TypeOfWork = newTypeOfWork;
+                buildManagerModel.Worker = newWorker;
+                buildManagerModel.Duration = newDuration;
+                buildManagerModel.TotalPrice = newTotalPrice;
                 db.SaveChanges();
                 result = "Вид робіт відредаговано";
             }
