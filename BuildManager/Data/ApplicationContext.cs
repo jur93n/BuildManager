@@ -14,7 +14,7 @@ namespace BuildManager.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Sever=(localdb)\\mssqllocaldb;Database=BuildManagerDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=BuildManagerDB;Trusted_Connection=True;");
         }
     }
 }
