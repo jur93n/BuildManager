@@ -6,8 +6,8 @@ namespace BuildManager.Models
 {
     public class BuildManagerModel : INotifyPropertyChanged
     {
+        public int Id { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.Now;
-
         private string _typeOfWork;
         private string _worker;
         private string _duration;
