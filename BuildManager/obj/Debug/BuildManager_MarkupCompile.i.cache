@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\source\repos\BuildManager\BuildManager\App.xaml
-11892971807
+41050112697
 
-91506374582
+12-783974331
 14-1086788017
-Views\MainWindow.xaml;
+Views\AddNewWorkWindow.xaml;Views\EditWorkWindow.xaml;Views\MainWindow.xaml;Views\MessageView.xaml;
 
-False
+True
 

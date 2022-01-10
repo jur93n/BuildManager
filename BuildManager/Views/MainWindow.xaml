@@ -8,7 +8,26 @@
         mc:Ignorable="d"
         Title="Build Manager" Height="600" Width="1200">
     <Grid>
-        <DataGrid x:Name="objectsGrid" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="0">
+            
+            <ListView >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Вид роботи"/>
+                        <GridViewColumn Header="Виконавець"/>
+                        <GridViewColumn Header="Дата створення"/>
+                        <GridViewColumn Header="Тривалість"/>
+                        <GridViewColumn Header="Загальна вартість"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            
+        </ListBox>
+        <!--<DataGrid x:Name="objectsGrid" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=TypeOfWork}" IsReadOnly="False" Header="Вид роботи" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Path=Worker}" IsReadOnly="False" Header="Виконавець" Width="180"/>
@@ -16,6 +35,6 @@
                 <DataGridTextColumn Binding="{Binding Path=Duration}" IsReadOnly="False" Header="Тривалість" Width="120"/>
                 <DataGridTextColumn Binding="{Binding Path=TotalPrice}" IsReadOnly="True" Header="Загальна вартість" Width="150"/>
             </DataGrid.Columns>
-        </DataGrid>
+        </DataGrid>-->
     </Grid>
 </Window>

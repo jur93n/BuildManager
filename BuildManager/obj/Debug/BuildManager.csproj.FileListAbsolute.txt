@@ -15,3 +15,5 @@ C:\Users\User\source\repos\BuildManager\BuildManager\bin\Debug\Newtonsoft.Json.x
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager.csproj.CopyComplete
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\MainWindow.g.cs
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\MainWindow.baml
+C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\AddNewWorkWindow.g.cs
+C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\AddNewWorkWindow.baml
