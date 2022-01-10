@@ -1,7 +1,6 @@
 C:\Users\User\source\repos\BuildManager\BuildManager\bin\Debug\BuildManager.exe.config
 C:\Users\User\source\repos\BuildManager\BuildManager\bin\Debug\BuildManager.exe
 C:\Users\User\source\repos\BuildManager\BuildManager\bin\Debug\BuildManager.pdb
-C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager.csproj.AssemblyReference.cache
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\App.g.cs
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager_MarkupCompile.cache
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager_MarkupCompile.lref
@@ -11,8 +10,8 @@ C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager.cspr
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager.exe
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager.pdb
-C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\Windows\MainWindow.g.cs
-C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\Windows\MainWindow.baml
 C:\Users\User\source\repos\BuildManager\BuildManager\bin\Debug\Newtonsoft.Json.dll
 C:\Users\User\source\repos\BuildManager\BuildManager\bin\Debug\Newtonsoft.Json.xml
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager.csproj.CopyComplete
+C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\MainWindow.g.cs
+C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\MainWindow.baml

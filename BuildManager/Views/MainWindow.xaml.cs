@@ -1,10 +1,10 @@
 ﻿using System.Windows;
 using System.ComponentModel;
-using BuildManager.Models;
+using BuildManager.ViewModels;
 using BuildManager.Data;
 using System;
 
-namespace BuildManager
+namespace BuildManager.Views
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -12,15 +12,15 @@ namespace BuildManager
     public partial class MainWindow : Window
     {
 
-        private readonly string PATH = $"{Environment.CurrentDirectory}\\todoDataList.json";
+        /*private readonly string PATH = $"{Environment.CurrentDirectory}\\todoDataList.json";
         private BindingList<BuildManagerModel> _buildManagerData;
         private FileIOService _fileIOService;
-
+        */
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        /*
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             _fileIOService = new FileIOService(PATH);
@@ -54,6 +54,6 @@ namespace BuildManager
                     Close();
                 }
             }
-        }
+        }*/
     }
 }

@@ -24,8 +24,9 @@ namespace BuildManager.ViewModels
         {
             ManagerModels = new ObservableCollection<BuildManagerModel>
             {
-                new BuildManagerModel { TypeOfWork="Зламати стіну", Worker="Міхалич", Duration="Два дні", TotalPrice=200}
-            };
+                new BuildManagerModel { TypeOfWork="Зламати стіну", Worker="Міхалич", Duration="Два дні", TotalPrice=200},
+                new BuildManagerModel { TypeOfWork="oboi", Worker="Glyna", Duration="two days", TotalPrice=200}
+            };            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
