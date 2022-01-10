@@ -179,6 +179,7 @@
       <DependentUpon>20220110120915_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
+    <Compile Include="Models\DataControl.cs" />
     <Compile Include="Views\MessageView.xaml.cs">
       <DependentUpon>MessageView.xaml</DependentUpon>
     </Compile>
