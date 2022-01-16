@@ -32,8 +32,8 @@ namespace BuildManager.ViewModels
             {
                 return openAddNewWorkWindow ?? new RelayCommand(obj =>
                 {
-                    OpenAddNewWorkWindow();
-                }
+                    OpenAddNewWorkWindowMethod();
+                }  
                 );
             }
         }

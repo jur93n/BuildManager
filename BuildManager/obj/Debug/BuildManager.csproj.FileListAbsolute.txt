@@ -17,7 +17,6 @@ C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\MainWindow.
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\MainWindow.baml
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\AddNewWorkWindow.g.cs
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\AddNewWorkWindow.baml
-C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager.csproj.AssemblyReference.cache
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\EditWorkWindow.g.cs
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\MessageView.g.cs
 C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\Views\EditWorkWindow.baml
