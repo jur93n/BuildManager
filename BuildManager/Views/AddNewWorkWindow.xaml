@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BuildManager.Views"
         mc:Ignorable="d"
-        Title="AddNewWorkWindow" Height="300" Width="300">
+        Title="AddNewWorkWindow" Height="300" Width="300"
+        Name="AddNewWorkWnd">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -16,14 +17,16 @@
                     VerticalAlignment="Center"
                     Width="200">
             <TextBlock Text="Вид роботи"/>
-            <TextBox Text=""/>
+            <TextBox Name="NameBlock" Text="{Binding WorkName}"/>
             <TextBlock Text="Виконавець"/>
-            <TextBox Text=""/>
+            <TextBox Name="WorkerBlock" Text="{Binding WorkerName}"/>
             <TextBlock Text="Тривалість"/>
-            <TextBox Text=""/>
+            <TextBox Name="DurationBlock" Text="{Binding DurationName}"/>
             <TextBlock Text="Загальна вартість"/>
-            <TextBox Text=""/>            
+            <TextBox Name="TotalPriceBlock" Text="{Binding TotalPriceName}"/>            
         </StackPanel>
-        <Button Grid.Row="1" Content="Додати вид робіт"/>
+        <Button Grid.Row="1" Content="Додати вид робіт"
+                Command="{Binding AddNewWork}"
+                CommandParameter="{Binding ElementName=AddNewWorkWnd}"/>
     </Grid>
 </Window>

@@ -99,3 +99,4 @@ C:\Users\User\source\repos\BuildManager\BuildManager\bin\Debug\zh-Hans\Microsoft
 C:\Users\User\source\repos\BuildManager\BuildManager\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 C:\Users\User\source\repos\BuildManager\BuildManager\bin\Debug\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\User\source\repos\BuildManager\BuildManager\bin\Debug\Microsoft.EntityFrameworkCore.Design.xml
+C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\BuildManager.csproj.AssemblyReference.cache

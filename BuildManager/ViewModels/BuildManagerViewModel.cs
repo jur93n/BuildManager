@@ -1,19 +1,17 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Collections.ObjectModel;
 using BuildManager.Models;
 using BuildManager.Views;
-using BuildManager.Data;
 using System.Collections.Generic;
 using System.Windows;
-using System;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace BuildManager.ViewModels
 {
     public class BuildManagerViewModel : INotifyPropertyChanged
     {
         private List<BuildManagerModel> allBuildManagerModels = DataControl.GetAllBuildManagerModels();
-
         public List<BuildManagerModel> AllBuildManagerModels
         {
             get { return allBuildManagerModels; }
@@ -23,6 +21,52 @@ namespace BuildManager.ViewModels
                 OnPropertyChanged("AllBuildManagerModels");
             }
         }
+
+        //Властивості для робіт
+        public string WorkName { get; set; }
+        public string WorkerName { get; set; }
+        public string DurationName { get; set; }
+        public int TotalPriceName { get; set; }
+
+        #region Команди створення нових робіт
+        private RelayCommand addNewWork;
+        public RelayCommand AddNewWork
+        {
+            get
+            {
+                return addNewWork ?? new RelayCommand(obj =>
+                {
+                    Window wnd = obj as Window; 
+                    string resultStr = "";
+                    if (WorkName == null || WorkName.Replace(" ", "").Length == 0)
+                    {
+                        SetRedBlockControll(wnd, "NameBlock");
+                    }
+                    if (WorkerName == null || WorkerName.Replace(" ", "").Length == 0)
+                    {
+                        SetRedBlockControll(wnd, "WorkerBlock");
+                    }
+                    if (DurationName == null || DurationName.Replace(" ", "").Length == 0)
+                    {
+                        SetRedBlockControll(wnd, "DurationBlock");
+                    }
+                    if (TotalPriceName == 0)
+                    {
+                        SetRedBlockControll(wnd, "TotalPriceBlock");
+                    }
+                    else
+                    {
+                        resultStr = DataControl.CreateWork(WorkName, WorkerName, DurationName, TotalPriceName);
+                        UpdateAllDataView();
+                        ShowMassageToUser(resultStr);
+                        SetNullValuesToPropeties();
+                        wnd.Close();
+                    }
+                }
+                );
+            }
+        }
+        #endregion
 
         #region Команди відкриття вікон
         private RelayCommand openAddNewWorkWindow;
@@ -59,6 +103,40 @@ namespace BuildManager.ViewModels
             window.ShowDialog();
         }
         #endregion
+
+        private void SetRedBlockControll(Window wnd, string blockName)
+        {
+            Control block = wnd.FindName(blockName) as Control;
+            block.BorderBrush = Brushes.Red;
+        }
+
+        #region Update Views
+        private void SetNullValuesToPropeties()
+        {
+            WorkName = null;
+            WorkerName = null;
+            DurationName = null;
+            TotalPriceName = 0;
+        }
+        private void UpdateAllDataView()
+        {
+            UpdateAllWorksViews();
+        }
+        private void UpdateAllWorksViews()
+        {
+            AllBuildManagerModels = DataControl.GetAllBuildManagerModels();
+            MainWindow.AllWorksView.ItemsSource = null;
+            MainWindow.AllWorksView.Items.Clear();
+            MainWindow.AllWorksView.ItemsSource = AllBuildManagerModels;
+            MainWindow.AllWorksView.Items.Refresh();
+        }
+        #endregion
+
+        private void ShowMassageToUser(string message)
+        {
+            MessageView messageView = new MessageView(message);
+            SetCenterPositionAndOpen(messageView);
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

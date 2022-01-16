@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using BuildManager.ViewModels;
+using System.Windows;
 
 namespace BuildManager.Views
 {
@@ -10,6 +11,7 @@ namespace BuildManager.Views
         public AddNewWorkWindow()
         {
             InitializeComponent();
+            DataContext = new BuildManagerViewModel();
         }
     }
 }

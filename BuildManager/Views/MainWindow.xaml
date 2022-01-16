@@ -7,7 +7,7 @@
         xmlns:viewmodels="clr-namespace:BuildManager.ViewModels" 
         d:DataContext="{d:DesignInstance Type=viewmodels:BuildManagerViewModel}"
         mc:Ignorable="d"
-        Title="Build Manager" Height="600" Width="1200">
+        Title="Build Manager" Height="600" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -15,14 +15,19 @@
         </Grid.RowDefinitions>
         <ListBox Grid.Row="0">
 
-            <ListView ItemsSource="{Binding AllBuildManagerModels}">
+            <ListView x:Name="ViewAllWorks" ItemsSource="{Binding AllBuildManagerModels}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Вид роботи"/>
-                        <GridViewColumn Header="Виконавець"/>
-                        <GridViewColumn Header="Дата створення"/>
-                        <GridViewColumn Header="Тривалість"/>
-                        <GridViewColumn Header="Загальна вартість"/>
+                        <GridViewColumn Header="Вид роботи" Width="300"
+                                        DisplayMemberBinding="{Binding Path=TypeOfWork}"/>
+                        <GridViewColumn Header="Виконавець"
+                                        DisplayMemberBinding="{Binding Path=Worker}"/>
+                        <GridViewColumn Header="Дата створення"
+                                        DisplayMemberBinding="{Binding Path=CreationDate}"/>
+                        <GridViewColumn Header="Тривалість"
+                                        DisplayMemberBinding="{Binding Path=Duration}"/>
+                        <GridViewColumn Header="Загальна вартість"
+                                        DisplayMemberBinding="{Binding Path=TotalPrice}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
