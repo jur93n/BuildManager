@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BuildManager.Views"
         mc:Ignorable="d"
-        Title="EditWorkWindow" Height="450" Width="800">
+        Title="EditWorkWindow" Height="450" Width="800"
+        Name="EditWorkWnd">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -16,14 +17,16 @@
                     VerticalAlignment="Center"
                     Width="200">
             <TextBlock Text="Вид роботи"/>
-            <TextBox Text=""/>
+            <TextBox Text="{Binding WorkName}"/>
             <TextBlock Text="Виконавець"/>
-            <TextBox Text=""/>
+            <TextBox Text="{Binding WorkerName}"/>
             <TextBlock Text="Тривалість"/>
-            <TextBox Text=""/>
+            <TextBox Text="{Binding DurationName}"/>
             <TextBlock Text="Загальна вартість"/>
-            <TextBox Text=""/>
+            <TextBox Text="{Binding TotalPriceName}"/>
         </StackPanel>
-        <Button Grid.Row="1" Content="Зберегти зміни"/>
+        <Button Grid.Row="1" Content="Зберегти зміни"
+                Command="{Binding EditWork}"
+                CommandParameter="{Binding ElementName=EditWorkWnd}"/>
     </Grid>
 </Window>

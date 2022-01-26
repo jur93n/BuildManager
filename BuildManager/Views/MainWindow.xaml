@@ -37,7 +37,7 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal"
                     HorizontalAlignment="Left">
             <Button Content="Створити новий вид робіт" Command="{Binding OpenAddNewWorkWindow}"/>
-            <Button Content="Редагувати"/>
+            <Button Content="Редагувати" Command="{Binding OpenEditItemWindow}"/>
             <Button Content="Видалити" Command="{Binding DeleteItem}"/>
         </StackPanel>
         <!--<DataGrid x:Name="objectsGrid" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">

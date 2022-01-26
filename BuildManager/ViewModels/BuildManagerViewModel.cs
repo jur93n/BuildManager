@@ -31,7 +31,7 @@ namespace BuildManager.ViewModels
         //Властивості для виділених елементів
         public BuildManagerModel SelectedItem { get; set; }
 
-        #region Команди створення нових робіт
+        #region Створення нових робіт
         private RelayCommand addNewWork;
         public RelayCommand AddNewWork
         {
@@ -71,6 +71,35 @@ namespace BuildManager.ViewModels
         }
         #endregion
 
+        #region Редагування робіт
+        private RelayCommand editWork;
+        public RelayCommand EditWork
+        {
+            get
+            {
+                return editWork ?? new RelayCommand(obj =>
+                {
+                    Window window = obj as Window;
+                    string resultStr = "Нічого не вибрано";
+                    if (SelectedItem != null)
+                    {
+                        resultStr = DataControl.EditWork(SelectedItem, 
+                            WorkerName, WorkerName, DurationName, TotalPriceName);
+                        UpdateAllDataView();
+                        SetNullValuesToPropeties();
+                        ShowMassageToUser(resultStr);
+                        window.Close();
+                    }
+                    else
+                    {
+                        ShowMassageToUser(resultStr);
+                    }
+                }
+                );
+            }
+        }
+        #endregion
+
         #region Видалення робіт
         private RelayCommand deleteItem;
         public RelayCommand DeleteItem
@@ -94,6 +123,22 @@ namespace BuildManager.ViewModels
         #endregion
 
         #region Команди відкриття вікон
+        private RelayCommand openEditItemWindow;
+        public RelayCommand OpenEditItemWindow
+        {
+            get
+            {
+                return openEditItemWindow ?? new RelayCommand(obj =>
+                {
+                    if (SelectedItem != null)
+                    {
+                        OpenEditNewWorkWindowMethod();
+                    }
+                }
+                );
+            }
+        }
+
         private RelayCommand openAddNewWorkWindow;
         public RelayCommand OpenAddNewWorkWindow
         {
