@@ -15,7 +15,8 @@
         </Grid.RowDefinitions>
         <ListBox Grid.Row="0">
 
-            <ListView x:Name="ViewAllWorks" ItemsSource="{Binding AllBuildManagerModels}">
+            <ListView x:Name="ViewAllWorks" ItemsSource="{Binding AllBuildManagerModels}"
+                      SelectedItem="{Binding SelectedItem}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Вид роботи" Width="300"
@@ -36,6 +37,8 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal"
                     HorizontalAlignment="Left">
             <Button Content="Створити новий вид робіт" Command="{Binding OpenAddNewWorkWindow}"/>
+            <Button Content="Редагувати"/>
+            <Button Content="Видалити" Command="{Binding DeleteItem}"/>
         </StackPanel>
         <!--<DataGrid x:Name="objectsGrid" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
             <DataGrid.Columns>

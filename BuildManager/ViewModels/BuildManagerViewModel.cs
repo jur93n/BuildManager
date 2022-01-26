@@ -28,6 +28,9 @@ namespace BuildManager.ViewModels
         public string DurationName { get; set; }
         public int TotalPriceName { get; set; }
 
+        //Властивості для виділених елементів
+        public BuildManagerModel SelectedItem { get; set; }
+
         #region Команди створення нових робіт
         private RelayCommand addNewWork;
         public RelayCommand AddNewWork
@@ -63,6 +66,28 @@ namespace BuildManager.ViewModels
                         wnd.Close();
                     }
                 }
+                );
+            }
+        }
+        #endregion
+
+        #region Видалення робіт
+        private RelayCommand deleteItem;
+        public RelayCommand DeleteItem
+        {
+            get
+            {
+                return deleteItem ?? new RelayCommand(obj =>
+                {
+                    string resultStr = "Нічого не вибрано";
+                    if (SelectedItem != null)
+                    {
+                        resultStr = DataControl.DeleteWork(SelectedItem);
+                        UpdateAllDataView();
+                    }
+                    SetNullValuesToPropeties();
+                    ShowMassageToUser(resultStr);
+;                }
                 );
             }
         }
