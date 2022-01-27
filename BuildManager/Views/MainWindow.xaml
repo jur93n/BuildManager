@@ -36,7 +36,7 @@
         </ListBox>
         <StackPanel Grid.Row="1" Orientation="Horizontal"
                     HorizontalAlignment="Left">
-            <Button Content="Створити новий вид робіт" Command="{Binding OpenAddNewWorkWindow}"/>
+            <Button Content="Додати" Command="{Binding OpenAddNewWorkWindow}"/>
             <Button Content="Редагувати" Command="{Binding OpenEditItemWindow}"/>
             <Button Content="Видалити" Command="{Binding DeleteItem}"/>
         </StackPanel>

@@ -23,13 +23,13 @@ namespace BuildManager.ViewModels
         }
 
         //Властивості для робіт
-        public string WorkName { get; set; }
-        public string WorkerName { get; set; }
-        public string DurationName { get; set; }
-        public int TotalPriceName { get; set; }
+        public static string WorkName { get; set; }
+        public static string WorkerName { get; set; }
+        public static string DurationName { get; set; }
+        public static int TotalPriceName { get; set; }
 
         //Властивості для виділених елементів
-        public BuildManagerModel SelectedItem { get; set; }
+        public static BuildManagerModel SelectedItem { get; set; }
 
         #region Створення нових робіт
         private RelayCommand addNewWork;
@@ -79,16 +79,16 @@ namespace BuildManager.ViewModels
             {
                 return editWork ?? new RelayCommand(obj =>
                 {
-                    Window window = obj as Window;
+                    Window wnd = obj as Window;
                     string resultStr = "Нічого не вибрано";
                     if (SelectedItem != null)
                     {
                         resultStr = DataControl.EditWork(SelectedItem, 
-                            WorkerName, WorkerName, DurationName, TotalPriceName);
+                            WorkName, WorkerName, DurationName, TotalPriceName);
                         UpdateAllDataView();
                         SetNullValuesToPropeties();
                         ShowMassageToUser(resultStr);
-                        window.Close();
+                        wnd.Close();
                     }
                     else
                     {
@@ -132,7 +132,7 @@ namespace BuildManager.ViewModels
                 {
                     if (SelectedItem != null)
                     {
-                        OpenEditNewWorkWindowMethod();
+                        OpenEditNewWorkWindowMethod(SelectedItem);
                     }
                 }
                 );
@@ -160,9 +160,9 @@ namespace BuildManager.ViewModels
             SetCenterPositionAndOpen(newWorkWindow);
         }
 
-        private void OpenEditNewWorkWindowMethod()
+        private void OpenEditNewWorkWindowMethod(BuildManagerModel work)
         {
-            AddNewWorkWindow editWorkWindow = new AddNewWorkWindow();
+            EditWorkWindow editWorkWindow = new EditWorkWindow(work);
             SetCenterPositionAndOpen(editWorkWindow);
         }
 

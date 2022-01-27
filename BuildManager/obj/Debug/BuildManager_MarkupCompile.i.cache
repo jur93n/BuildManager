@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\
+C:\Users\ronni\Projects\BuildManager\BuildManager\obj\Debug\
 BuildManager
 none
 false
 DEBUG;TRACE
-C:\Users\User\source\repos\BuildManager\BuildManager\App.xaml
+C:\Users\ronni\Projects\BuildManager\BuildManager\App.xaml
 41050112697
 
 17-1028663454
-55-1821471572
+55-2038546435
 Views\AddNewWorkWindow.xaml;Views\EditWorkWindow.xaml;Views\MainWindow.xaml;Views\MessageView.xaml;
 
 True

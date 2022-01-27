@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BuildManager.Views"
         mc:Ignorable="d"
-        Title="EditWorkWindow" Height="450" Width="800"
+        Title="EditWorkWindow" Height="300" Width="300"
         Name="EditWorkWnd">
     <Grid>
         <Grid.RowDefinitions>
@@ -23,7 +23,7 @@
             <TextBlock Text="Тривалість"/>
             <TextBox Text="{Binding DurationName}"/>
             <TextBlock Text="Загальна вартість"/>
-            <TextBox Text="{Binding TotalPriceName}"/>
+            <TextBox Text="{Binding TotalPriceName}"/>            
         </StackPanel>
         <Button Grid.Row="1" Content="Зберегти зміни"
                 Command="{Binding EditWork}"
