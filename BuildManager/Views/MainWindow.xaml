@@ -1,0 +1,58 @@
+﻿<Window x:Class="BuildManager.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BuildManager.Views"
+        xmlns:viewmodels="clr-namespace:BuildManager.ViewModels" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:BuildManagerViewModel}"
+        mc:Ignorable="d"
+        Title="Build Manager" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="0" Width="auto">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListView x:Name="ViewAllWorks" 
+                      ItemsSource="{Binding AllBuildManagerModels}"
+                      SelectedItem="{Binding SelectedItem}">
+                <ListView.View >
+                    <GridView>
+                        <GridViewColumn Header="Вид роботи" Width="410" 
+                                        DisplayMemberBinding="{Binding Path=TypeOfWork}"/>
+                        <GridViewColumn Header="Виконавець" Width="auto"
+                                        DisplayMemberBinding="{Binding Path=Worker}"/>
+                        <GridViewColumn Header="Дата створення" Width="auto"
+                                        DisplayMemberBinding="{Binding Path=CreationDate}"/>
+                        <GridViewColumn Header="Тривалість" Width="auto"
+                                        DisplayMemberBinding="{Binding Path=Duration}"/>
+                        <GridViewColumn Header="Загальна вартість" Width="auto"
+                                        DisplayMemberBinding="{Binding Path=TotalPrice}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            
+        </ListBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal"
+                    HorizontalAlignment="Left">
+            <Button Content="Додати" Command="{Binding OpenAddNewWorkWindow}" Padding="10"/>
+            <Button Content="Редагувати" Command="{Binding OpenEditItemWindow}" Padding="10"/>
+            <Button Content="Видалити" Command="{Binding DeleteItem}" Padding="10"/>
+        </StackPanel>
+        <!--<DataGrid x:Name="objectsGrid" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=TypeOfWork}" IsReadOnly="False" Header="Вид роботи" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path=Worker}" IsReadOnly="False" Header="Виконавець" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Path=CreationDate}" IsReadOnly="True" Header="Дата створення" Width="160"/>
+                <DataGridTextColumn Binding="{Binding Path=Duration}" IsReadOnly="False" Header="Тривалість" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Path=TotalPrice}" IsReadOnly="True" Header="Загальна вартість" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>-->
+    </Grid>
+</Window>

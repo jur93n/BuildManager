@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\source\repos\BuildManager\BuildManager\obj\Debug\
+C:\Users\ronni\Projects\BuildManager\BuildManager\obj\Debug\
 BuildManager
 none
 false
 DEBUG;TRACE
-C:\Users\User\source\repos\BuildManager\BuildManager\App.xaml
-11151548125
+C:\Users\ronni\Projects\BuildManager\BuildManager\App.xaml
+41050112697
 
-61434861427
-13-1505183044
-MainWindow.xaml;
+17-1028663454
+55-2038546435
+Views\AddNewWorkWindow.xaml;Views\EditWorkWindow.xaml;Views\MainWindow.xaml;Views\MessageView.xaml;
 
 True
 
