@@ -13,21 +13,26 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListBox Grid.Row="0">
-
-            <ListView x:Name="ViewAllWorks" ItemsSource="{Binding AllBuildManagerModels}"
+        <ListBox Grid.Row="0" Width="auto">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListView x:Name="ViewAllWorks" 
+                      ItemsSource="{Binding AllBuildManagerModels}"
                       SelectedItem="{Binding SelectedItem}">
-                <ListView.View>
+                <ListView.View >
                     <GridView>
-                        <GridViewColumn Header="Вид роботи" Width="300"
+                        <GridViewColumn Header="Вид роботи" Width="410" 
                                         DisplayMemberBinding="{Binding Path=TypeOfWork}"/>
-                        <GridViewColumn Header="Виконавець"
+                        <GridViewColumn Header="Виконавець" Width="auto"
                                         DisplayMemberBinding="{Binding Path=Worker}"/>
-                        <GridViewColumn Header="Дата створення"
+                        <GridViewColumn Header="Дата створення" Width="auto"
                                         DisplayMemberBinding="{Binding Path=CreationDate}"/>
-                        <GridViewColumn Header="Тривалість"
+                        <GridViewColumn Header="Тривалість" Width="auto"
                                         DisplayMemberBinding="{Binding Path=Duration}"/>
-                        <GridViewColumn Header="Загальна вартість"
+                        <GridViewColumn Header="Загальна вартість" Width="auto"
                                         DisplayMemberBinding="{Binding Path=TotalPrice}"/>
                     </GridView>
                 </ListView.View>
@@ -36,9 +41,9 @@
         </ListBox>
         <StackPanel Grid.Row="1" Orientation="Horizontal"
                     HorizontalAlignment="Left">
-            <Button Content="Додати" Command="{Binding OpenAddNewWorkWindow}"/>
-            <Button Content="Редагувати" Command="{Binding OpenEditItemWindow}"/>
-            <Button Content="Видалити" Command="{Binding DeleteItem}"/>
+            <Button Content="Додати" Command="{Binding OpenAddNewWorkWindow}" Padding="10"/>
+            <Button Content="Редагувати" Command="{Binding OpenEditItemWindow}" Padding="10"/>
+            <Button Content="Видалити" Command="{Binding DeleteItem}" Padding="10"/>
         </StackPanel>
         <!--<DataGrid x:Name="objectsGrid" FontSize="16" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
             <DataGrid.Columns>

@@ -58,7 +58,7 @@ namespace BuildManager.Models
                 buildManagerModel.Duration = newDuration;
                 buildManagerModel.TotalPrice = newTotalPrice;
                 db.SaveChanges();
-                result = "Вид робіт відредаговано";
+                result = "Відредаговано";
             }
             return result;
         }

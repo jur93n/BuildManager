@@ -199,3 +199,4 @@ C:\Users\ronni\Projects\BuildManager\BuildManager\obj\Debug\BuildManager.csproj.
 C:\Users\ronni\Projects\BuildManager\BuildManager\obj\Debug\BuildManager.csproj.CoreCompileInputs.cache
 C:\Users\ronni\Projects\BuildManager\BuildManager\obj\Debug\BuildManager.exe
 C:\Users\ronni\Projects\BuildManager\BuildManager\obj\Debug\BuildManager.pdb
+C:\Users\ronni\Projects\BuildManager\BuildManager\obj\Debug\BuildManager.csproj.AssemblyReference.cache
